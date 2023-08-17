@@ -1,17 +1,5 @@
 import sqlite3
 
-connection = sqlite3.connect("tutorial.db")
-cursor = connection.cursor()
-
-async def check_table():
-    await cursor.execute('''CREATE TABLE IF NOT EXISTS users_sessions (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                user_id INTEGER,
-                parent_message_id INTEGER,
-                child_messages_id NULL
-    )''')
-    connection.commit()
-
 class DatabaseAPI():
 
     def __init__(self, db_name: str):
